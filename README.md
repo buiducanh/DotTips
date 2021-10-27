@@ -253,3 +253,7 @@ HISTSIZE=130000 HISTFILESIZE=-1
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
 ```
+# Sed prints matched line with original line
+```
+xargs sed -ne 's/\(.\+\)networkStatus_\(.\+\)/\1networkStatus_\2\n\1networkStatusComponent_\2/p' < list_of_files.txt
+```
