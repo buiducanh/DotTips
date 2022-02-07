@@ -257,3 +257,11 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 ```
 xargs sed -ne 's/\(.\+\)networkStatus_\(.\+\)/\1networkStatus_\2\n\1networkStatusComponent_\2/p' < list_of_files.txt
 ```
+# time multiple commands
+```
+time sh -c 'command1; command2'
+```
+# runs command in a clean environment, i.e. no aliases, no builtin shell functions, no defined functions
+```
+env <command>
+```
